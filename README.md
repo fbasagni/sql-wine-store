@@ -1,65 +1,47 @@
-# Projeto de Banco de Dados – Loja de Vinhos  
-Atividade Somativa 2 – Banco de Dados para TI – PUCPR  
-Autora: **Francine Basagni**
+# Projeto SQL Wine Store
 
-# Projeto de Banco de Dados – Loja de Vinhos
+Projeto de banco de dados relacional para uma loja de vinhos, cobrindo o pipeline completo de modelagem/modelo conceitual à implementação física e consultas SQL.
 
-Este repositório reúne o desenvolvimento completo da Atividade Somativa 2, voltada para a modelagem e implementação de um banco de dados para uma loja de vinhos.
-A proposta foi transformar um conjunto de requisitos teóricos em um banco de dados real, funcional e organizado — passando pelas etapas de modelo conceitual, modelo lógico, modelo físico e consultas em SQL.
-
-O foco deste projeto foi aplicar, na prática, os conceitos trabalhados na disciplina e demonstrar clareza, estrutura e entendimento do processo de construção de um banco relacional.
 
 ---
 
-## 1. Objetivo do Projeto
+## 1. Sobre o projeto
 
-O banco de dados foi estruturado para registrar e relacionar informações essenciais sobre:
+Este projeto demonstra a construção completa de um banco de dados relacional, transformando requisitos de negócio em um modelo de dados estruturado, funcional e organizado.
+O banco registra e relaciona informações essenciais sobre:
 
- - Vinhos e suas características (nome, tipo, ano, descrição).
- - Vinícolas responsáveis pela produção.
- - Regiões às quais essas vinícolas pertencem.
- - Relacionamentos entre essas entidades, preservando a integridade referencial.
+- Vinhos e suas características (nome, tipo, ano, descrição)
+- Vinícolas responsáveis pela produção
+- Regiões associadas a cada vinícola
+- Relacionamentos entre as entidades, preservando a integridade referencial
 
-Toda a modelagem foi pensada para garantir consistência, integridade referencial e facilidade na obtenção de informações relevantes.
+A modelagem foi pensada para garantir consistência, integridade referencial e facilidade na obtenção de informações relevantes.
 
 ---
 
-## 2. O que foi desenvolvido?
+## 2. O que foi implementado 
 
-Este repositório apresenta todas as entregas solicitadas na atividade, incluindo:
+Modelo conceitual (DER) representando entidades e relacionamentos
+Modelo lógico criado no MySQL Workbench
+Modelo físico completo em SQL (DDL + inserts)
+Aplicação correta de chaves primárias e estrangeiras
+Consultas SQL com JOINs integrando dados entre tabelas
+Criação de usuário com permissões restritas (perfil Sommelier)
 
- - Modelo conceitual (DER) representando as entidades e seus relacionamentos
- - Modelo lógico criado no MySQL Workbench
- - Modelo físico completo em SQL (DDL + inserts)
- - Aplicação correta de chaves primárias e estrangeiras
- - Consultas SQL utilizando junções para integrar as informações
- - Criação de um usuário com permissões específicas (Sommelier)
- - Organização dos arquivos de forma clara e separada por etapa
 
-Todo o processo foi conduzido seguindo boas práticas, com foco em organização e compreensão do fluxo de modelagem.
 ---
 
 ## 3. Estrutura do Repositório
 
 ```plaintext
-/loja_vinhos
-├── modelo_conceitual.png
-├── modelo_logico.png
-├── modelo_fisico.sql
-├── consultas.sql
-├── usuario_sommelier.sql
+sql-wine-store/
+├── modelo_conceitual.png     # Diagrama Entidade-Relacionamento (DER)
+├── modelo_logico.png         # Modelo lógico exportado do MySQL Workbench
+├── modelo_fisico.sql         # Criação das tabelas + inserção de dados
+├── consultas.sql             # Consultas SQL principais
+└── usuario_sommelier.sql     # Usuário com permissões restritas
 
 ```
-
-Descrição dos arquivos:
-
- - modelo_conceitual.png — diagrama DER
- - modelo_logico.png — modelo lógico exportado do MySQL Workbench
- - modelo_fisico.sql — criação das tabelas e inserção dos registros
- - consultas.sql — consultas solicitadas na atividade
- - usuario_sommelier.sql — usuário com permissões restritas conforme regras do enunciado.
-
----
 
 ## 4. Tecnologias Utilizadas
 
@@ -75,28 +57,20 @@ Para reproduzir o projeto em qualquer ambiente MySQL:
 
  1. Crie um schema no MySQL.
  2. Execute o arquivo modelo_fisico.sql para gerar as tabelas e popular os dados.
- 3. Utilize o arquivo consultas.sql para validar as consultas principais.
- 4. Caso queira testar permissões de usuário, execute também usuario_sommelier.sql.
+ 3. Utilize consultas.sql para validar as consultas principais
+ 4. Opcionalmente execute usuario_sommelier.sql para testar o controle de permissões de usuário
 
 ---
 
-## 6. Entregáveis Atendidos
+## 6. Conceitos de SQL aplicados
 
-Conforme solicitado na atividade:
-
--  Modelo Conceitual completo.  
--  Modelo Lógico no MySQL Workbench.  
--  Modelo Físico implementado.  
--  5 registros mínimos em cada tabela.  
--  Consulta trazendo nome do vinho, ano, vinícola e região.  
--  Criação do usuário *Sommelier* com permissões restritas e limite de consultas.  
--  Todos os arquivos estruturados e entregues.
+- Modelagem Entidade-Relacionamento (conceitual → lógico → físico)
+- Criação de tabelas com chaves primárias e estrangeiras
+- Inserção de dados e restrições de integridade
+- Consultas com JOIN entre múltiplas tabelas
+- Consultas analíticas cruzando dados de vinhos, vinícolas e regiões.
+- Criação de usuário e gerenciamento de permissões (GRANT/REVOKE)
 
 ---
 
-## 7. Considerações Finais
-
-Este projeto reúne, de forma direta e organizada, todo o processo de modelagem de um banco de dados — desde a compreensão das entidades até a implementação final em SQL.
-Além de atender aos requisitos acadêmicos, o trabalho demonstra entendimento prático de modelagem, relacionamento entre tabelas, integridade referencial e boas práticas de organização.
-O repositório também serve como referência para estudos futuros ou início de projetos mais complexos envolvendo banco de dados.
 
